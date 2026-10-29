@@ -46,7 +46,6 @@ The lab can be expanded with additional virtual machines to simulate real-world 
 | 🌐 Virtual Networking | Network connectivity and lab isolation |
 | 💻 Linux Terminal | System administration and command-line operations |
 | 🔎 Nmap *(optional)* | Network discovery and port scanning |
-| 📡 Wireshark *(optional)* | Network traffic analysis |
 | 📸 VirtualBox Snapshots | Recovery and configuration management |
 
 > Tools marked optional can be added as your lab develops.
@@ -87,18 +86,24 @@ flowchart TD
 
 Update this table to match your actual setup.
 
-| Component | Configuration |
-| --- | --- |
-| Host Operating System | `YOUR_HOST_OS` |
-| Processor | `YOUR_CPU_MODEL` |
-| Installed RAM | `YOUR_TOTAL_RAM` |
-| Hypervisor | Oracle VirtualBox |
-| Virtual Machine OS | Kali Linux |
-| Kali Linux RAM | `YOUR_VM_RAM` |
-| Virtual CPUs | `YOUR_VCPU_COUNT` |
-| Virtual Disk | `YOUR_DISK_SIZE` |
-| Network Mode | `YOUR_NETWORK_MODE` |
-| Kali IP Address | `YOUR_KALI_IP` |
+
+## ⚙️ Lab Configuration
+
+| 🧩 Component       | ⚙️ Configuration   |
+| ------------------ | ------------------  |
+| 🖥️ Host OS         | Windows 11         |
+| 🧠 Host RAM        | 16 GB               |
+| ⚡ Processor       | Intel Core i5      |
+| 🧰 Hypervisor      | VirtualBox 7.2  |
+| 🐉 Security OS     | Kali Linux 2026.2  |
+| 🧠 Kali RAM        | 2048 MB            |
+| 🌐 Virtual Network | NAT Network        |
+| 📡 Network Address | 10.0.0.0/24        |
+| 🐧 Kali IP Address | 10.0.0.2/24        |
+| 🚪 Default Gateway | 10.0.0.1           |
+| 🌍 DNS Server      | 8.8.8.8            |
+| 🔮 Future VM Range | 10.0.0.3–10.0.0.99 |
+
 
 > **Note:** Do not publish real public IP addresses, passwords, private keys, or other sensitive system information in your repository.
 
