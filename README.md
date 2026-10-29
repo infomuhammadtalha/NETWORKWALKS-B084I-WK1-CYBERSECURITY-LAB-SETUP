@@ -52,40 +52,26 @@ The lab can be expanded with additional virtual machines to simulate real-world 
 
 ---
 
+
+
 ## 🏗️ Lab Architecture
 
-The following diagram illustrates the basic lab design.
-
 ```mermaid
-flowchart TD
-    A["💻 Host Computer"] --> B["🖥️ Oracle VirtualBox"]
-    B --> C["🐉 Kali Linux VM"]
-    C --> D["🔐 Cybersecurity Tools"]
-    C --> E["🌐 Virtual Network"]
-    E -.-> F["🎯 Future Target VMs"]
-    
-    style A fill:#1f2937,color:#ffffff,stroke:#64748b
-    style B fill:#183a61,color:#ffffff,stroke:#60a5fa
-    style C fill:#075985,color:#ffffff,stroke:#38bdf8
-    style D fill:#14532d,color:#ffffff,stroke:#4ade80
-    style E fill:#713f12,color:#ffffff,stroke:#fbbf24
-    style F fill:#581c87,color:#ffffff,stroke:#c084fc
+graph TD
+    A[Windows 11 Host] --> B[Oracle VirtualBox]
+    B --> C[Kali Linux VM]
+    C --> D[Cybersecurity Tools]
+    C --> E[NAT Network]
+    E --> F[Future Target VMs]
 ```
 
-**Architecture summary:**
+### Architecture Summary
 
-- **Host machine:** Runs the virtualization software.
-- **VirtualBox:** Provides the virtual hardware and networking.
-- **Kali Linux:** Acts as the primary cybersecurity workstation.
-- **Virtual network:** Connects lab machines according to the selected network mode.
-- **Future target VMs:** Can be added for authorized testing in an isolated environment.
-
----
-
-## ⚙️ Lab Configuration
-
-Update this table to match your actual setup.
-
+- **Windows 11:** Host operating system.
+- **VirtualBox:** Runs and manages virtual machines.
+- **Kali Linux:** Cybersecurity workstation.
+- **NAT Network:** Allows connected VMs to communicate and access external networks, subject to configuration.
+- **Target VMs:** Optional machines for authorized lab testing.
 
 ## ⚙️ Lab Configuration
 
@@ -103,9 +89,6 @@ Update this table to match your actual setup.
 | 🚪 Default Gateway | 10.0.0.1           |
 | 🌍 DNS Server      | 8.8.8.8            |
 | 🔮 Future VM Range | 10.0.0.3–10.0.0.99 |
-
-
-> **Note:** Do not publish real public IP addresses, passwords, private keys, or other sensitive system information in your repository.
 
 ---
 
@@ -249,40 +232,48 @@ Use this checklist to track your progress.
 ---
 
 ## 📸 Screenshots
+## Step 1. Install 7-Zip
 
-Suggested folder structure:
+7-Zip was installed to extract the Kali Linux virtual-machine package, which may be distributed as a `.7z` archive.
 
-```text
-cybersecurity-lab/
-├── README.md
-└── screenshots/
-    ├── 01-virtualbox-dashboard.png
-    ├── 02-kali-linux-desktop.png
-    ├── 03-network-configuration.png
-    ├── 04-screenshot-kali-network-settings.png 
-    ├── 05-vm-snapshot.png
-  
-```
+**Tool:** 7-Zip
 
-After adding your screenshots, display them in this section.
+### 2. VirtualBox Dashboard
 
-### 1. VirtualBox Dashboard
+![](01-virtualbox-dashboard.png)
+VirtualBox was installed as the hypervisor.
 
-![VirtualBox Dashboard](screenshots/01-virtualbox-dashboard.png)
+---
 
-### 2. Kali Linux Desktop
+### 3. Kali Linux Desktop
 
-![Kali Linux Desktop](screenshots/02-kali-linux-desktop.png)
+![Kali Linux Desktop](02-kali-linux-desktop.png)
 
-### 3. Network Configuration
+### 4. Network Configuration
+A dedicated NAT Network was created in VirtualBox.
 
-![Network Configuration](screenshots/04-network-configuration.png)
+Configuration: Network Name: NatNetwork IPv4 Prefix: 10.0.0.0/24 DHCP: Enabled IPv6: Disabled
 
-### 4. Virtual Machine Snapshot
+![Network Configuration](03-network-configuration.png)
+A NAT Network was selected because multiple virtual machines connected to the same NAT Network can communicate with one another while also having outbound network connectivity.
 
-![Virtual Machine Snapshot](screenshots/06-vm-snapshot.png)
+This will allow future attacker and target VMs to communicate within the lab.
 
-> Replace these image paths with your actual screenshots. If you have not captured a screenshot yet, remove its image reference until the file is available.
+### 5. Configure the Kali Linux Network
+The Kali Linux network configuration was checked and configured with a consistent IPv4 address.
+
+Example configuration:
+IP Address: 10.0.0.2
+Subnet Mask: 255.255.255.0
+Gateway: 10.0.0.1
+DNS: 8.8.8.8
+
+![Virtual Machine Snapshot](04-screenshot-kali-network-settings.png)
+
+### 5. Virtual Machine Snapshot
+
+![Virtual Machine Snapshot](05-vm-snapshot..png)
+
 
 ---
 
@@ -388,12 +379,12 @@ This laboratory is intended for **educational purposes and authorized security t
 
 ## 👨‍💻 Author
 
-**Your Name**
+**Muhammad Talha**
 
 Aspiring Cybersecurity Professional | Cybersecurity Lab Projects
 
-- GitHub: [@YOUR_GITHUB_USERNAME](https://github.com/YOUR_GITHUB_USERNAME)
-- LinkedIn: [YOUR_LINKEDIN_PROFILE](https://www.linkedin.com/)
+- 🐙 GitHub: [@infomuhammadtalha](https://github.com/infomuhammadtalha)
+- 💼 LinkedIn: [Muhammad Talha](https://www.linkedin.com/in/muhammad-talha-98b39b279/)
 
 ---
 
@@ -404,6 +395,9 @@ If you find this project useful for learning cybersecurity and virtualization, c
 Suggestions, improvements, and constructive feedback are welcome.
 
 ---
+## 📌 Project Information
+
+**Program Name:** Cybersecurity at Networkwalks | **Week:** 01 | **Project:** Cybersecurity & Pentesting Lab Setup | **Repository:** GitHub
 
 <p align="center">
   <b>🔐 Learn. Build. Test. Secure.</b>
