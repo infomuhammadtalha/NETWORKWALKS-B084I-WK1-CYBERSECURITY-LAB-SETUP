@@ -110,8 +110,13 @@ Update this table to match your actual setup.
 ---
 
 ## 🚀 Lab Setup Procedure
+## Step 1: Install 7-Zip
 
-### Step 1: Install Oracle VirtualBox
+Download and install 7-Zip, a free and open-source file archiver used to extract compressed files such as `.7z`, `.zip`, and other supported formats.
+
+🔗 [7-Zip Official Downloads](https://www.7-zip.org/)
+
+### Step 2: Install Oracle VirtualBox
 
 Download and install VirtualBox from the official website.
 
