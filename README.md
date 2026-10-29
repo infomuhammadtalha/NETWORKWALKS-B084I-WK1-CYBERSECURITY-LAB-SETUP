@@ -248,9 +248,7 @@ Use this checklist to track your progress.
 
 ---
 
-## 📸 Screenshots & Documentation
-
-Add screenshots of your actual lab configuration to make this repository more informative and visually appealing.
+## 📸 Screenshots
 
 Suggested folder structure:
 
@@ -260,10 +258,10 @@ cybersecurity-lab/
 └── screenshots/
     ├── 01-virtualbox-dashboard.png
     ├── 02-kali-linux-desktop.png
-    ├── 03-vm-settings.png
-    ├── 04-network-configuration.png
-    ├── 05-terminal-verification.png
-    └── 06-vm-snapshot.png
+    ├── 03-network-configuration.png
+    ├── 04-screenshot-kali-network-settings.png 
+    ├── 05-vm-snapshot.png
+  
 ```
 
 After adding your screenshots, display them in this section.
@@ -276,19 +274,11 @@ After adding your screenshots, display them in this section.
 
 ![Kali Linux Desktop](screenshots/02-kali-linux-desktop.png)
 
-### 3. Virtual Machine Settings
-
-![Virtual Machine Settings](screenshots/03-vm-settings.png)
-
-### 4. Network Configuration
+### 3. Network Configuration
 
 ![Network Configuration](screenshots/04-network-configuration.png)
 
-### 5. Terminal Verification
-
-![Terminal Verification](screenshots/05-terminal-verification.png)
-
-### 6. Virtual Machine Snapshot
+### 4. Virtual Machine Snapshot
 
 ![Virtual Machine Snapshot](screenshots/06-vm-snapshot.png)
 
